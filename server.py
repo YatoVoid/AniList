@@ -193,6 +193,9 @@ def search():
     return resp
 
 
+
 if __name__ == "__main__":
     xenylist.initiate()
-    app.run(port=2808)
+    port = int(os.environ.get("PORT", 2808))  # 2808 - запасной порт для локальной отладки
+    app.run(host="0.0.0.0", port=port)
+
